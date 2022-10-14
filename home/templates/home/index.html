@@ -1,0 +1,261 @@
+{% load static %}
+{% include 'home/base.html' %}
+{% include 'home/navstyle.html'%}
+<style>
+  .mycard:hover {
+
+    box-shadow: 2px 2px 10px 1px #cccccc;
+    border-radius: 5px;
+  }
+
+  @media (min-width: 400px) {
+    #headtext {
+      font-size: 1.5rem;
+    }
+
+    /*1rem = 16px*/
+    #threetext {
+      font-size: 1.5rem;
+      font-weight: 200;
+    }
+  }
+
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) {
+    #headtext {
+      font-size: 2.5rem;
+    }
+
+    /*1rem = 16px*/
+    #threetext {
+      font-size: 2.5rem;
+      font-weight: 100;
+    }
+  }
+
+  /* Extra large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) {
+    #headtext {
+      font-size: 2.5rem;
+    }
+
+    /*1rem = 16px*/
+    #threetext {
+      font-size: 2.5rem;
+      font-weight: 100;
+    }
+  }
+</style>
+{% block content %}
+<header>
+  {% include 'home/navbar.html' %}
+  <!--Carousel Wrapper-->
+  <div id="carousel-example-1z" class="carousel slide carousel-slide" data-ride="carousel">
+    <!--Indicators-->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-1z" data-slide-to="1"></li>
+      <li data-target="#carousel-example-1z" data-slide-to="2"></li>
+    </ol>
+    <!--/.Indicators-->
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+      <!--First slide-->
+
+      <div class="carousel-item active">
+        <div class="view">
+          <img class="d-block w-100 cimg" src="{% static 'home/images/factories.png' %}" alt="First slide" />
+          <div class="mask rgba-black-strong flex-center">
+            <div class="container text-center white-text wow fadeInUp">
+              <h4 id="headtext" style="
+                  color:whitesmoke;
+                  font-weight: bold;
+                  font-style: italic;
+                 
+                  
+                ">
+                Gehloth Overseas Industries Private Limited.
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/First slide-->
+      <!--Second slide-->
+      <div class="carousel-item">
+        <div class="view">
+          <img class="d-block w-100 cimg" src="{% static 'home/images/c2.jpg' %}" alt="Second slide" />
+          <div class="mask rgba-black-light flex-center">
+            <h2 id="headtext" style="color: whitesmoke;">
+              Second image description            </h2>
+           
+          </div>
+        </div>
+      </div>
+      <!--/Second slide-->
+      <!--Third slide-->
+      <div class="carousel-item">
+        <div class="view">
+          <img class="d-block w-100 cimg" src="{% static 'home/images/c3.jpg' %}" alt="Third slide" />
+          <div class="mask rgba-black-strong flex-center">
+            <div class="container text-center white-text wow fadeInUp">
+              <h2 id="headtext" style="color: whitesmoke;">
+                Third image description
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/Third slide-->
+    </div>
+    <!--/.Slides-->
+    <!--Controls-->
+    <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+    <!--/.Controls-->
+  </div>
+  <!--/.Carousel Wrapper-->
+</header>
+<main class="text-center  pt-5">
+  <div class="container mt-5 mb-2 py-5">
+    <div class="row d-flex mb-5">
+      <div class="col-lg-7 col-md-12 mt-5">
+        <h1 class="font-weight-bold px-md-4 mx-md-4 text-left "
+          style="color: #1780e8; text-shadow: 4px 4px 5px #cdd3d5">
+          Welcome To GOI PVT. LTD.
+        </h1>
+        <section class="text-center px-md-4 mx-md-4 mt-5 dark-grey-text">
+          <!--Grid row-->
+          <div class="row d-flex ">
+            <!--Grid column-->
+            <div class="col-lg-12 text-left">
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book.
+              </p>
+            </div>
+          </div>
+
+      </div>
+      <div class="col-lg-5 col-md-12">
+        <img class="d-block w-100 " src="{% static 'home/images/GOI.jpg' %}" height="400px" width="600px"
+          alt="Second slide" />
+
+
+      </div>
+
+      <!--Grid column-->
+    </div>
+    <div class="accordion md-accordion mt-5" id="accordionEx" role="tablist" aria-multiselectable="true">
+      <!-- Accordion card -->
+      <div class="card border-top border-bottom-0 border-left border-right border-light">
+        <!-- Card header -->
+        <div class="card-header border-bottom border-light" role="tab" id="headingOne1">
+          <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true"
+            aria-controls="collapseOne1">
+            <h5 class="font-weight-normal mb-0" style="color: #1792be">
+              VISION
+            </h5>
+            <i class="fa fa-angle-down rotate-icon"></i>
+          </a>
+        </div>
+
+        <!-- Card body -->
+        <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
+          data-parent="#accordionEx">
+          <div class="card-body">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book.
+          </div>
+        </div>
+      </div>
+      <!-- Accordion card -->
+
+      <!-- Accordion card -->
+      <div class="card border-bottom-0 border-left border-right border-light">
+        <!-- Card header -->
+        <div class="card-header border-bottom border-light" role="tab" id="headingTwo2">
+          <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo2"
+            aria-expanded="false" aria-controls="collapseTwo2">
+            <h5 class="font-weight-normal mb-0" style="color: #1792be">
+              MISSION
+            </h5>
+            <i class="fa fa-angle-down rotate-icon"></i>
+          </a>
+        </div>
+
+        <!-- Card body -->
+        <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2"
+          data-parent="#accordionEx">
+          <div class="card-body">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book.
+          </div>
+        </div>
+      </div>
+      <!-- Accordion card -->
+
+      <!-- Accordion card -->
+     
+      <!-- Accordion card -->
+    </div>
+    <a class="btn btn-primary mt-5" style="background-image: linear-gradient(to bottom right, #1780e8, #7e4684);"
+      href="{% url 'about' %}">KNOW MORE</a>
+    <!--Grid row-->
+    </section>
+  </div>
+
+  <div class="container py-5 my-5">
+    <section class="p-md-3 mx-md-5 text-lg-left">
+      <h2 class="font-weight-bold text-center mb-2 pb-3">Our Products</h2>
+      <hr class="w-header mb-3" />
+      <div class="row text-center d-flex justify-content-center">
+
+        {% for i in products%}
+        <div class="mycard col-lg-4 my-4 col-md-4 mb-lg-0 mb-5 py-3">
+          <a href="{% url 'products' %}#{{i.id}}" style="color: black">
+            <img src="https://drive.google.com/thumbnail?id={{i.imageUrl}}" width="200" height="200">
+
+            <h4 class="font-weight-bold mb-4">{{i.title}}</h4>
+          </a>
+        </div>
+
+        {% endfor %}
+    
+
+      
+
+      </div>
+      <div class="row justify-content-center">
+
+        <a class="btn btn-primary mt-5" style="background-image: linear-gradient(to bottom right, #1780e8, #7e4684);"
+          href="{% url 'products' %}">Know More</a>
+      </div>
+    </section>
+  </div>
+
+
+
+
+
+
+  <!-- Other AgriProducts -->
+
+
+    {% include 'home/footer.html' %}
+</main>
+
+{% endblock content %}
+{% block style %}
+{% endblock %}
+{% block script %}
+{% endblock %}

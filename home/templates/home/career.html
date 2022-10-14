@@ -1,0 +1,154 @@
+{% include 'home/base.html' %}
+{% load static %}
+{% include 'home/navstyle.html' %}
+{% block content %}
+
+{% include 'home/navbar.html'%}
+
+{% include 'home/aboutstyle.html'%}
+<div class="view intro-2" style="">
+        <div class="full-bg-img">
+            <div class="mask rgba-black-strong flex-center">
+                <div class="container text-center white-text wow fadeInUp">
+                    <h2 id="headtext" class="mt-5">Career</h2>
+                    <br>
+                    <h5 class="pb-2 mb-5">Let today be the start of something new. Join our team from here</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<main class="text-center">
+
+     <div class="container my-5 py-5 ">
+
+
+  <!--Section: Content-->
+  <section class="px-md-5 mx-md-5 text-center text-lg-left dark-grey-text">
+
+    <style>
+      .map-container {
+        height: 400px;
+        position: relative;
+        overflow : hidden
+      }
+
+      .map-container iframe {
+        left: 0;
+        top: 0;
+        height: 600px;
+        width: 100%;
+        position: absolute;
+
+      }
+    </style>
+
+    <!--Google Maps-->
+
+    <!--Grid row-->
+    <div class="row">
+
+      <!--Grid column-->
+      <div class="col-lg-5 col-md-12 mb-0 mb-md-0">
+
+        <h3 class="font-weight-bold">Join Us</h3>
+        <p class="text-muted">We have the requirement of Hardware engineers all over the country.If interested, please post your details here</p>
+        <br>
+          <h5 class="font-weight-bold">Head office</h5>
+          <p class="text-muted">Rapidtech IT services Pvt. Ltd., D-66 , Second Floor , Sector-7 Noida,
+Gautam  Buddha Nagar UP 201301</p>
+
+        <p><span class="font-weight-bold mr-2">Email:</span><a href="">contactus@rapidtechit.com</a></p>
+<!--        <p><span class="font-weight-bold mr-2">Phone:</span><a href="">+48 123 456 789</a></p>-->
+
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-lg-7 col-md-12 mb-4 mb-md-0">
+<form method="POST" action="{% url 'career' %}" enctype="multipart/form-data">
+  {% csrf_token %}
+        <!--Grid row-->
+        <div class="row">
+
+
+          <!--Grid column-->
+          <div class="col-md-6">
+
+            <!-- Material outline input -->
+            <div class="md-form md-outline mb-0">
+              <input type="text" id="form-first-name" required name="name" class="form-control">
+              <label for="form-first-name">Your name</label>
+            </div>
+
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-md-6">
+
+            <!-- Material outline input -->
+            <div class="md-form md-outline mb-0">
+              <input type="text" id="form-last-name" required name="contact" class="form-control">
+              <label for="form-last-name">Mobile Number</label>
+            </div>
+
+          </div>
+          <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+        <!-- Material outline input -->
+        <div class="md-form md-outline mt-3">
+          <input type="email" id="form-email" required name="email" class="form-control">
+          <label for="form-email">E-mail</label>
+        </div>
+
+        <!-- Material outline input -->
+        <div class="md-form md-outline">
+          <input type="text" id="form-subject" required name="exp" class="form-control">
+          <label for="form-subject">Experience/Fresher</label>
+        </div>
+
+          <div class="md-form md-outline">
+          <input type="text" id="form-company" required name="place" class="form-control">
+          <label for="form-company">Place</label>
+        </div>
+
+        <!--Material textarea-->
+        <div class="md-form md-outline mb-3">
+          <textarea id="form-message" class="md-textarea form-control" required name="details" rows="6"></textarea>
+          <label for="form-message">Tell us about yourself in short?</label>
+        </div>
+
+        <div class="custom-file">
+    <input type="file" name="upfile" class="custom-file-input" id="inputGroupFile01"
+      aria-describedby="inputGroupFileAddon01">
+    <label class="custom-file-label" style="width:300px" for="inputGroupFile01">Upload CV (optional)</label>
+  </div>
+
+        <button type="submit" class="btn btn-info btn-sm ml-0 mt-3">Submit<i class="far fa-paper-plane ml-2"></i></button>
+
+</form>
+      </div>
+      <!--Grid column-->
+
+    </div>
+    <!--Grid row-->
+
+
+  </section>
+  <!--Section: Content-->
+
+
+</div>
+
+
+
+
+ {% include 'home/footer.html' %}
+
+</main>
+
+{% endblock content %}

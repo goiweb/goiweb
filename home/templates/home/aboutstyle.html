@@ -1,0 +1,94 @@
+{% load static %}
+<style>
+  .intro-2 {
+    background: url("{% static 'home/images/f10.jpg' %}") no-repeat center center;
+    background-size: 100% 100%;
+  }
+
+  .view {
+    height: 50%;
+  }
+
+  .timeline {
+    position: relative;
+    list-style: none;
+    padding: 1rem 0;
+    margin: 0;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    margin-left: -1px;
+    background-color: #50a1ff;
+  }
+
+  .timeline-element {
+    position: relative;
+    padding: 1rem 0;
+    text-align: right;
+    width: 100%;
+    text-align: left;
+    padding-left: 2.5rem;
+    padding-right: 0;
+  }
+
+  .timeline-element::before {
+    content: '';
+    position: absolute;
+    right: -8px;
+    top: 1.35rem;
+    left: 1px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #50a1ff;
+    background-color: #fff;
+  }
+
+  .timeline-element:nth-child(even)::before {
+    right: auto;
+    left: 1px;
+  }
+
+  .timeline-element:nth-child(even) {
+    margin-left: 0rem;
+    padding-left: 2.5rem;
+    padding-right: 0;
+    text-align: left;
+  }
+
+  @media (min-width: 768px) {
+    #headtext {
+      font-size: 2rem;
+    }
+
+   
+
+
+    /*1rem = 16px*/
+  }
+
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) {
+    #headtext {
+      font-size: 3rem;
+    }
+
+    /*1rem = 16px*/
+  }
+
+  /* Extra large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) {
+    #headtext {
+      font-size: 1rem;
+    }
+
+    /*1rem = 16px*/
+  }
+</style>

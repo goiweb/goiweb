@@ -1,0 +1,92 @@
+{% load static %}
+<style>
+    .navbar {
+        background-image: linear-gradient(to bottom right, #1780e8, #7525D5);
+    }
+
+    .top-nav-collapse {
+        background-image: linear-gradient(to bottom right, #1780e8, #7525D5);
+
+    }
+
+    .navbar.navbar-dark .navbar-nav .nav-item .nav-link,
+    .navbar .nav-link {
+        color: white;
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    .dropdown:hover>.dropdown-menu {
+        display: block;
+    }
+
+    .dropdown>.dropdown-toggle:active {
+        /*Without this, clicking will make it sticky*/
+        pointer-events: none;
+    }
+
+
+    .navbar.navbar-dark .navbar-nav .nav-item .nav-link:hover {
+        color: white;
+        border-bottom: 1px solid white;
+    }
+
+
+
+    .navbar.navbar-dark .navbar-brand {
+        color: #0F81B8
+    }
+
+    .cimg {
+        height: 760px
+    }
+
+    .navbar.navbar-dark .navbar-toggler-icon {
+        filter: invert(36%) sepia(87%) saturate(700%) hue-rotate(161deg) brightness(96%) contrast(93%);
+    }
+
+    @media only screen and (max-width: 991px) {
+        .navbar {
+            background-color: transparent;
+        }
+
+        .navbar-nav {
+            background-color: transparent
+        }
+
+        .top-nav-collapse {
+            background-color: green;
+
+        }
+
+        .cimg {
+            height: 400px
+        }
+    }
+
+
+    @media only screen and (max-width: 991px) {
+        .navbar {
+            background-color: transparent;
+        }
+
+
+    }
+
+    @media (max-width: 768px) {
+
+
+        .custom-nav-top {
+            display: none;
+        }
+
+
+        /*1rem = 16px*/
+    }
+
+
+    html,
+    body {
+        height: 100%;
+    }
+</style>

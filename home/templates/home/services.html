@@ -1,0 +1,88 @@
+{% include 'home/base.html' %}
+{% load static %}
+{% include 'home/navstyle.html' %}
+{% block content %}
+
+{% include 'home/navbar.html'%}
+
+{% include 'home/aboutstyle.html'%}
+<div class="view intro-2" style="">
+  <div class="full-bg-img">
+    <div class="mask rgba-black-strong flex-center">
+      <div class="container text-center white-text wow fadeInUp">
+        <h2 style="font-size:70px;">Our Products</h2>
+        <br>
+        <h5 class="pb-2 mb-5">Hello, thanks for being interested in us, here are our services mentioned in detail</h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main class="text-center">
+
+  {% for i in products %}
+  <div id="{{i.id}}" class="container my-5 py-5 ">
+
+    <section class="px-md-5 mx-md-5 dark-grey-text text-center text-lg-left">
+
+      <div class="row">
+
+        {% if not forloop.counter|divisibleby:2 %}
+        <div class="col-lg-6 mb-4 mb-lg-0 d-flex align-items-center justify-content-center">
+            <img src="https://drive.google.com/thumbnail?id={{i.imageUrl}}" width="400" height="300" class="" alt="">
+
+
+        </div>
+
+
+        <div class="col-lg-6 mb-4 mb-lg-0">
+
+          <h3 class="font-weight-bold">{{i.title}}</h3>
+
+
+
+          <p class="text-muted">{{i.description}}</p>
+          <a href="{% url 'contactId' i.id %}">
+          <button type="submit" style="background-image: linear-gradient(to bottom right, #1780e8, #7e4684);"
+          class="btn btn-info btn-sm ml-0">Enquiry<i class="far fa-paper-plane ml-2 "></i></button>
+          </a>
+        </div>
+        {% else %}
+
+        <div class="col-lg-6 mb-4 mb-lg-0">
+
+          <h3 class="font-weight-bold">{{i.title}}</h3>
+
+
+
+          <p class="text-muted">{{i.description}}</p>
+          <a href="{% url 'contactId' i.id %}">
+            
+
+          <button type="submit" style="background-image: linear-gradient(to bottom right, #1780e8, #7e4684);"
+          class="btn btn-info btn-sm ml-0">Enquiry<i class="far fa-paper-plane ml-2 "></i></button>
+          </a>
+        </div>
+        <div class="col-lg-6 mb-4 mb-lg-0 d-flex align-items-center justify-content-center">
+          <a href="{% url 'contactId' i.id %}">
+
+            <img src="https://drive.google.com/thumbnail?id={{i.imageUrl}}" width="400" height="300" class="" alt="">
+          </a>
+
+        </div>
+        {% endif %}
+
+
+      </div>
+
+    </section>
+  </div>
+  {% endfor %}
+
+
+
+  {% include 'home/footer.html' %}
+
+</main>
+
+{% endblock content %}

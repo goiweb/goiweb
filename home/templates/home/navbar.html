@@ -1,0 +1,128 @@
+<!--Main Navigation-->
+
+{% load static %}
+
+<div>
+  <div class="row px-md-auto"
+    style="background-color:white;min-height: 100px; max-height: 100%; display: flex; justify-content: flex-start;align-items: center; ">
+    <div class="col-md-2  text-center">
+      <a class="navbar-brand" href="{% url 'home' %}">
+        <img src="{% static 'home/images/l1.jpg' %}" width="120" height="40" alt="">
+      </a>
+
+    </div>
+    <div class="col-md-3 custom-nav-top">
+      <div style="display: flex; width: 100%;">
+        <div class="icon" style="margin-right: 30px;">
+          <i class="fa fa-phone"></i>
+        </div>
+        <div class="body-content">
+          <div class="heading">{{contactInfo.ph_num}}</div>
+          {{contactInfo.email}}
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3  custom-nav-top">
+      <div class="box-icon-1" style="display: flex;  ">
+        <div class="icon" style="margin-right: 30px;">
+          <div class="fa fa-clock-o"></div>
+        </div>
+        <div class="body-content">
+          <div class="heading">Mon - Sat 09:00 - 18:00</div>
+          Sunday Closed
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 custom-nav-top">
+      <div class="box-icon-1" style="display: flex;   ">
+        <div class="icon" style="margin-right: 30px;">
+          <div class="fa fa-map-marker"></div>
+        </div>
+        <div class="body-content">
+          <div class="heading">{{contactInfo.location}}</div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- INFO 2 -->
+
+    <!-- INFO 3 -->
+
+  </div>
+
+
+</div>
+<nav class="navbar  navbar-expand-lg navbar-dark scrolling-navbar pl-lg-5">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto pl-lg-3">
+      <li class="nav-item mynav">
+        <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="{% url 'about' %}">
+          About Us
+        </a>
+
+      </li>
+
+      <li class="dropdown nav-item">
+        <a class="nav-link" href="{% url 'products' %}">
+          Products
+        </a>
+
+      </li>
+      <li class="dropdown nav-item">
+        <a class="nav-link " href="{% url 'contact1' %}">
+          Contact
+        </a>
+
+      </li>
+
+
+
+
+    </ul>
+
+  </div>
+</nav>
+
+
+
+<!--Main Layout-->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 100) {
+        document.querySelector('.navbar').classList.add('fixed-top');
+        // add padding top to show content behind navbar
+        navbar_height = document.querySelector('.navbar').offsetHeight;
+        document.body.style.paddingTop = navbar_height + 'px';
+        document.querySelector('.navbar').style.backgroundImage = "linear-gradient(to bottom right, #1780e8, #7525D5)";
+
+
+      } else {
+        document.querySelector('.navbar').classList.remove('fixed-top');
+        // remove padding top from body
+        document.body.style.paddingTop = '0';
+        document.querySelector('.navbar').style.backgroundColor = "transparent";
+
+      }
+    });
+  });
+
+</script>
+<script type="text/javascript"
+  src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.16.0/js/jquery.min.js"></script>
+<script type="text/javascript"
+  src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.16.0/js/popper.min.js"></script>
+<script type="text/javascript"
+  src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/plugins/mdb-plugins-gathered.min.js"></script>
+<script type="text/javascript"
+  src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.16.0/js/mdb.min.js"></script>
