@@ -39,7 +39,7 @@ def contact1(request):
             subject,
             f'name : {name} \ncontact : {contact}\nrequest_type : contact request\ncompany : {company}\nmessage : {message}',
             EMAIL_HOST_USER,
-            ['gehlothweb@gmail.com'],
+            [contactInfo[0].email],
             fail_silently=False,
         )
         send_mail(
@@ -76,7 +76,7 @@ def contactId(request,id):
             subject,
             f'name : {name} \ncontact : {contact}\nrequest_type : product request\nproduct name : {title}\ncompany : {company}\nmessage : {message}',
             EMAIL_HOST_USER,
-            ['gehlothweb@gmail.com'],
+            [contactInfo[0].email],
             fail_silently=False,
         )
         send_mail(
