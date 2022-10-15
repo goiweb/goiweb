@@ -39,7 +39,7 @@ def contact1(request):
             subject,
             f'name : {name} \ncontact : {contact}\nrequest_type : contact request\ncompany : {company}\nmessage : {message}',
             EMAIL_HOST_USER,
-            [contactInfo[0].email],
+            [contactInfo['email']],
             fail_silently=False,
         )
         send_mail(
@@ -66,6 +66,12 @@ def contactId(request,id):
     params = {"product" : dict(imageUrl=product, title=title, id=id), "contactInfo" :contactInfo}
     print("Product", params)
     if request.method == 'POST':
+        contactInfo = ContactUs.objects.all()
+        print("Email", list(contactInfo))
+
+        contactInfo = {"location": contactInfo[0].location, "email": contactInfo[0].email,
+                       "ph_num": contactInfo[0].ph_number}
+        print("Contact info",contactInfo)
         name = request.POST.get('name')
         contact = request.POST.get('contact')
         subject = request.POST.get('subject')
@@ -76,7 +82,7 @@ def contactId(request,id):
             subject,
             f'name : {name} \ncontact : {contact}\nrequest_type : product request\nproduct name : {title}\ncompany : {company}\nmessage : {message}',
             EMAIL_HOST_USER,
-            [contactInfo[0].email],
+            [contactInfo['email']],
             fail_silently=False,
         )
         send_mail(
